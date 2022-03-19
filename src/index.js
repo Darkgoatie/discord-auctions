@@ -81,6 +81,7 @@ class Auction {
 
 	/**
 	 * Saves edits on the auction.
+	 * @private
 	 */
 	async save() {
 		await this.manager.editAuction(this.guildId, this.channelId, this);
@@ -100,8 +101,8 @@ class Auction {
 	async bid(price, user) {
 		if (this.price >= price) throw 'Bid amount is lower than current bid!';
 		if (this.price + this.bidLimit >= price) throw 'Bid amount does not pass the bid limit!';
-		this.price = price;
-		this.winner = user;
+		await this.setPrice(price);
+		await this.setWinner(user);
 	}
 
 	/**
@@ -110,6 +111,7 @@ class Auction {
 	 */
 	async setWinner(user) {
 		this.winner = user;
+		this.save();
 	}
 
 	/**
@@ -118,6 +120,7 @@ class Auction {
 	 */
 	async setPrice(price) {
 		this.price = price;
+		this.save();
 	}
 
 	/**
@@ -126,6 +129,7 @@ class Auction {
 	 */
 	async setBidLimit(bidLimit) {
 		this.bidLimit = bidLimit;
+		this.save();
 	}
 
 	/**
@@ -134,6 +138,7 @@ class Auction {
 	 */
 	async setItem(item) {
 		this.item = item;
+		this.save();
 	}
 
 	/**
@@ -159,9 +164,20 @@ class AuctionManager {
 	 * @param {Auction} auction - The Auction to set in the database.
 	 * @returns {Promise<Auction>}
 	 */
-	async createAuction(auction) {
+	async saveAuction(auction) {
 		this.db.set(`${auction.guildId}/${auction.channelId}`, auction);
 		return this.promise(auction);
+	}
+
+	/**
+	 * 
+	 * @param {string} guildId 
+	 * @param {string} channelId  
+	 * @returns {boolean}
+	 * @private
+	 */
+	async hasAuction(guildId, channelId) {
+		return this.promise(this.db.has(`${guildId}/${channelId}`));
 	}
 
 	/**
@@ -172,7 +188,8 @@ class AuctionManager {
 	 * @returns {Promise<Auction>}
 	 */
 	async getAuction(guildId, channelId) {
-		return this.promise(this.db.get(`${guildId}/${channelId}`));
+		const all = await this.getAllAuctions();
+		return all.find((auc) => auc.channelId == channelId);
 	}
 
 	/**
@@ -220,7 +237,7 @@ class AuctionManager {
 	async start(auctionStartOptions) {
 		const { item, price, channelId, guildId, hostedBy } = auctionStartOptions;
 		const aucToStart = new Auction({ item, price, hostedBy, guildId, channelId }, this);
-		await this.createAuction(aucToStart);
+		await this.saveAuction(aucToStart);
 		return this.promise(aucToStart);
 	}
 
@@ -275,18 +292,6 @@ class AuctionManager {
 
 		return this.promise(aucs);
 	}
-
-	/**
-	 * 
-	 * @param {string} guildId 
-	 * @param {string} channelId  
-	 * @returns {boolean}
-	 * @private
-	 */
-	async hasAuction(guildId, channelId) {
-		return this.promise(this.db.has(`${guildId}/${channelId}`));
-	}
-
 	/**
 	 * 
 	 * @param {string} guildId - The guild ID of the auction
@@ -299,7 +304,6 @@ class AuctionManager {
 
 	/**	
 	 * @method
-	 * @private
 	 */
 	promise(data) {
 		return new Promise((resolve) => {
