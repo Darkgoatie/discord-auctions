@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: AuctionManager</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" href="styles/skyceil.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="utilities">
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search"><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
+    </div>
+    <hr>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="Auction.html">Auction</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="Auction.html#auctionLength">auctionLength</a></li><li><span class="small-icon F">F</span><a href="Auction.html#bid">bid</a></li><li><span class="small-icon F">F</span><a href="Auction.html#delete">delete</a></li><li><span class="small-icon F">F</span><a href="Auction.html#save">save</a></li><li><span class="small-icon F">F</span><a href="Auction.html#setBidLimit">setBidLimit</a></li><li><span class="small-icon F">F</span><a href="Auction.html#setItem">setItem</a></li><li><span class="small-icon F">F</span><a href="Auction.html#setPrice">setPrice</a></li><li><span class="small-icon F">F</span><a href="Auction.html#setWinner">setWinner</a></li><li><span class="small-icon M">M</span><a href="Auction.html#bidLimit">bidLimit</a></li><li><span class="small-icon M">M</span><a href="Auction.html#channelId">channelId</a></li><li><span class="small-icon M">M</span><a href="Auction.html#guildId">guildId</a></li><li><span class="small-icon M">M</span><a href="Auction.html#hostedBy">hostedBy</a></li><li><span class="small-icon M">M</span><a href="Auction.html#item">item</a></li><li><span class="small-icon M">M</span><a href="Auction.html#manager">manager</a></li><li><span class="small-icon M">M</span><a href="Auction.html#price">price</a></li><li><span class="small-icon M">M</span><a href="Auction.html#startedAt">startedAt</a></li><li><span class="small-icon M">M</span><a href="Auction.html#winner">winner</a></li></ul></li><li><span class="small-icon C">C</span><b><a href="AuctionManager.html">AuctionManager</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="AuctionManager.html#exists">exists</a></li><li><span class="small-icon F">F</span><a href="AuctionManager.html#fetch">fetch</a></li><li><span class="small-icon F">F</span><a href="AuctionManager.html#fetchAll">fetchAll</a></li><li><span class="small-icon F">F</span><a href="AuctionManager.html#start">start</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    <div class="burger">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+    </div>
+
+    <h1 class="page-title">Class: AuctionManager</h1>
+
+    
+
+
+
+
+<section>
+<header>
+    <hr>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>AuctionManager<span class="signature">(managerOptions)</span><span class="type-signature"></span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+
+    
+    <h4 class="name" id="AuctionManager"><span class="type-signature"></span>new AuctionManager<span class="signature">(managerOptions)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>managerOptions</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Object</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The options of the manager</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line152">line 152</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="exists"><span class="type-signature">(async) </span>exists<span class="signature">(guildId, channelId)</span><span class="type-signature"> &rarr; {Promise.&lt;boolean>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>guildId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The guild ID of the auction</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>channelId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The channel ID of the auction</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line296">line 296</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">Promise.&lt;boolean></span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id="fetch"><span class="type-signature">(async) </span>fetch<span class="signature">(guildId, channelId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Auction.html">Auction</a>>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>guildId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The guild ID of the auction.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>channelId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>The channel ID of the auction.</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">Promise.&lt;<a href="Auction.html">Auction</a>></span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id="fetchAll"><span class="type-signature">(async) </span>fetchAll<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;Array.&lt;<a href="Auction.html">Auction</a>>>}</span></h4>
+    
+
+    
+    <p class="summary"><p>Fetches all auctions</p>.</p>
+    
+
+
+
+<div class="description">
+    <p>Fetches all auctions</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line256">line 256</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">Promise.&lt;Array.&lt;<a href="Auction.html">Auction</a>>></span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id="start"><span class="type-signature">(async) </span>start<span class="signature">(auctionStartOptions)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Auction.html">Auction</a>>}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>auctionStartOptions</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">Object</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last">
+                    <h6>Properties</h6>
+                    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>item</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+
+                    
+
+                    
+                    </td>
+                
+
+                
+
+                <td class="description last"><p>The item to auction.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>price</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+
+                    
+
+                    
+                    </td>
+                
+
+                
+
+                <td class="description last"><p>The starting price of the auction.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>channelId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+
+                    
+
+                    
+                    </td>
+                
+
+                
+
+                <td class="description last"><p>The channel id to start the auction in.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>guildId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+
+                    
+
+                    
+                    </td>
+                
+
+                
+
+                <td class="description last"><p>The guild id to start the auction in.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>hostedBy</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+
+                    
+                    </td>
+                
+
+                
+
+                <td class="description last"><p>The user who started the auction</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+                </td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>The Auction that was started</li>
+</ul>
+</div>
+
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">Promise.&lt;<a href="Auction.html">Auction</a>></span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Mar 19 2022 10:42:16 GMT+0300 (GMT+03:00) using <a href="https://github.com/devsnowflake/jsdoc-skyceil">Skyceil Theme</a>
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+</body>
+</html>
