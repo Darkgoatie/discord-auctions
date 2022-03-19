@@ -1,0 +1,19 @@
+{
+	"name": "discord-auctions",
+	"version": "1.0.0",
+	"description": "An auction module for discord bots.",
+	"main": "src/index.js",
+	"repository": {},
+	"scripts": {
+		"docs": "jsdoc -c jsdoc.json"
+	},
+	"author": "darkgoatie",
+	"license": "MIT",
+	"devDependencies": {
+		"jsdoc": "^3.6.10",
+		"jsdoc-skyceil": "^2.0.0"
+	},
+	"dependencies": {
+		"quick.db": "^7.1.3"
+	}
+}
